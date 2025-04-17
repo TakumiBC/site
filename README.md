@@ -1,10 +1,10 @@
 # 🧑‍🎓 Thomas Wu
 
 **Swimming | Computer Science | Economics**
-*Shanghai Starriver Bilingual School, Class of 2028*
-[GitHub](https://github.com/TakumiBC) | [Swimcloud](https://www.swimcloud.com/swimmer/2800919/)
 
----
+*Shanghai Starriver Bilingual School, Class of 2028*
+
+[GitHub](https://github.com/TakumiBC) | [Swimcloud](https://www.swimcloud.com/swimmer/2800919/)
 
 ## 🎓 Academic Profile  
 
@@ -21,8 +21,6 @@ AP Calculus BC + AP Physics 2 + AP Microeconomics + H English Literature + H Eng
 
 **Grade 12**  
 AP Statistics + AP Macroeconomics + H English Literature + H English Language Arts + H Chinese Literature
-
----
 
 ## 💻 Computer Science & Projects
 
@@ -51,8 +49,6 @@ Python, JavaScript, TypeScript, HTML/CSS, Java
   - Maintained the club website  
   - Provided tech support
 
----
-
 ## 🏊‍♂️ Swimming
 
 **Personal Bests (LCM, as of July 2024):**
@@ -66,8 +62,6 @@ Python, JavaScript, TypeScript, HTML/CSS, Java
 - Competed in the 2024 Hong Kong Olympic Trials  
 - Broke a 10-year-old 50 Free meet record at the Far Westerns Pacific Championships  
   → [Reported by SwimSwam](https://swimswam.com/hanz-palattao-breaks-20-year-old-meet-record-at-summer-far-westerns/)
-
----
 
 ## 🏅 Awards  
 
