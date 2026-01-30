@@ -1,6 +1,7 @@
 ---
 title: "Traditional Chinese Medicine Speedrun: Yin–Yang and The Five Agents"
 date: 2026-01-30
+excerpt: "Yin–Yang and the Five Agents are the foundations of Traditional Chinese Medicine (TCM)."
 permalink: /posts/2026/01/tcm-speedrun-yin-yang-five-agents/
 tags:
   - tcm
