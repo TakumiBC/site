@@ -1,6 +1,7 @@
 ---
 title: "\"I am not what I am.\" — Homebrew Python PIP"
 date: 2026-01-31
+excerpt: "Unfortunately, it's neither William Shakespeare nor Iago who said it this time. It's Homebrew Python."
 permalink: /posts/2026/01/homebrew-python/
 tags:
   - python
@@ -9,9 +10,6 @@ tags:
   - macos
 
 ---
-
-# "I am not what I am." ——Homebrew Python
-
 Unfortunately, it's neither William Shakespeare nor Iago who said it this time. It's Homebrew Python.
 
 ## What Happened
