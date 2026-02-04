@@ -8,7 +8,6 @@ tags:
   - homebrew
   - pip
   - macos
-
 ---
 Unfortunately, it's neither William Shakespeare nor Iago who said it this time. It's Homebrew Python.
 
