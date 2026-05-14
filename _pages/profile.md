@@ -7,6 +7,18 @@ author_profile: true
 
 {% include base_path %}
 
+## 🎓 Education
+
+**Shanghai Starriver Bilingual School**, Class of 2028
+
+**Grade 9:** H Chinese Literature + H Algebra 2 + S World Literature + S Language Arts + H Physics + S+ Chemistry + S+ Biology
+
+**Grade 10:** H Chinese Literature + AP Precalculus + H World Literature + H Language Arts + AP Computer Science A + AP Microeconomics + S Discrete Mathematics
+
+**Grade 11:** H Chinese Literature + AP Calculus BC + H American Literature + H English Language Arts + AP Physics 1 + AP Macroeconomics + S Linear Algebra
+
+**Grade 12:** H Chinese Literature + AP Statistics + H British Literature + H English Composition and Research + AP Cybersecurity + AP Physics 2 + AP World History + AP Psychology
+
 ## 📖 Academics
 
 ***Compositional Network Model: A Drop-In Structural Embedding for Chinese Characters via Ideographic Description Sequences***  
