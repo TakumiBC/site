@@ -22,7 +22,7 @@ author_profile: true
 ## 📖 Academics
 
 ***Compositional Network Model: A Drop-In Structural Embedding for Chinese Characters via Ideographic Description Sequences***  
-Independent research conducted by two high school students: me and [Liqian Yan](https://www.linkedin.com/in/liqian-yan-05563736a/). Accepted for oral presentation at the [9th International Forum on Linguistics and Chinese Education](https://lt.cityu.edu.hk/ifolce-9/) (IFOLCE-9), an international academic forum organized by Stanford, CUHK, and EdUHK. Integrates Chinese linguistics with artificial intelligence to address tokenization bottlenecks by introducing Unicode [Ideographic Description Sequences](https://en.wikipedia.org/wiki/Ideographic_Description_Characters), achieving **state-of-the-art** performance among all Chinese AI models on the Chinese Language Understanding Evaluation (CLUE) Benchmark.
+Independent research conducted by two high school students: me and [Liqian Yan](https://www.linkedin.com/in/liqian-yan-05563736a/). Accepted for oral presentation at the [9th International Forum on Linguistics and Chinese Education](https://lt.cityu.edu.hk/ifolce-9/) (IFOLCE-9), an international academic forum organized by Stanford, CityUHK, and EdUHK. Integrates Chinese linguistics with artificial intelligence to address tokenization bottlenecks by introducing Unicode [Ideographic Description Sequences](https://en.wikipedia.org/wiki/Ideographic_Description_Characters), achieving **state-of-the-art** performance among all Chinese AI models on the Chinese Language Understanding Evaluation (CLUE) Benchmark.
 
 ## 💻 Computer Science
 
