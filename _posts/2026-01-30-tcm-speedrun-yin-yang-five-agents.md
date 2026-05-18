@@ -9,7 +9,6 @@ tags:
   - chinese-philosophy
   - yin-yang
   - five-agents
-  - wu-xing
   - medicine-theory
   - taoism
   - chinese-culture
