@@ -86,7 +86,8 @@ Python, Java, JavaScript, TypeScript, HTML/CSS
 ## 🏅 Awards  
 
 - **Student Development Scholarship – First Prize for Potential in Special Talents**, Shanghai Starriver Bilingual School (Jun 2025)
-
+  Awarded **CNY ¥20,000** (approximately **USD $3,000**).
+- 
 - **Academic Progress Award**, Shanghai Starriver Bilingual School (Feb 2025)
 
 - **Swimmer of the Year (Boys)**, Hiba Academy Shanghai (Jun 2024)
