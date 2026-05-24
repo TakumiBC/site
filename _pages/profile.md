@@ -32,6 +32,7 @@ Python, Java, JavaScript, TypeScript, HTML/CSS
 **Experience:**
 
 - **Founder & CEO of [LinkScape](https://linkscape.app/)** (2022–present)
+  
   Founded and lead LinkScape, a student-run open-source software organization and the largest Hack Club in Shanghai. LinkScape empowers young developers to build meaningful, real-world software.
 
 - **Founder & Organizer of [SH Hacks](https://www.shhacks.com/)** (2023–present)
@@ -71,13 +72,13 @@ Python, Java, JavaScript, TypeScript, HTML/CSS
 
 - Competed in the 2024 Hong Kong Olympic Trials
 
-- Broke a 10-year-old 50 Free meet record at the Far Westerns Pacific Championships
-
-  → [Reported by SwimSwam](https://swimswam.com/hanz-palattao-breaks-20-year-old-meet-record-at-summer-far-westerns/#:~:text=Thomas%20Wu) & [Far Westerns Records List](https://www.pacswim.org/userfiles/cms/documents/435/far-westerns-records-through-2025-lc.pdf)
+- Broke a 10-year-old 50 Free meet record at the Far Westerns Pacific Championships 
+<br />
+→ [Reported by SwimSwam](https://swimswam.com/hanz-palattao-breaks-20-year-old-meet-record-at-summer-far-westerns/#:~:text=Thomas%20Wu) & [Far Westerns Records List](https://www.pacswim.org/userfiles/cms/documents/435/far-westerns-records-through-2025-lc.pdf)
   
-- Named to CDST’s Top 25 Times List for the 2023–2024 season, qualified for Junior Nationals at age 14, and member of the Junior National Relay Team 
-
-→ [CDST Annual Banquet Summary](https://www.gomotionapp.com/team/pccdst/page/news/532604/2024-2025-season-welcome-and-14th-annual-banquet-summary)
+- Named to CDST’s Top 25 Times List for the 2023–2024 season, qualified for Junior Nationals at age 14, and member of the Junior National Relay Team
+<br />
+  → [CDST Annual Banquet Summary](https://www.gomotionapp.com/team/pccdst/page/news/532604/2024-2025-season-welcome-and-14th-annual-banquet-summary)
 
 - Ranked **#21 in China** on Swimcloud’s 2026 national rankings among all male swimmers (as of May 2026), regardless of age or competitive level
 
