@@ -73,7 +73,7 @@ Python, Java, JavaScript, TypeScript, HTML/CSS
 
 - Broke a 10-year-old 50 Free meet record at the Far Westerns Pacific Championships
 
-  → [Reported by SwimSwam](https://swimswam.com/hanz-palattao-breaks-20-year-old-meet-record-at-summer-far-westerns/#:~:text=Thomas%20Wu) | [Far Westerns Records List](https://www.pacswim.org/userfiles/cms/documents/435/far-westerns-records-through-2025-lc.pdf)
+  → [Reported by SwimSwam](https://swimswam.com/hanz-palattao-breaks-20-year-old-meet-record-at-summer-far-westerns/#:~:text=Thomas%20Wu) & [Far Westerns Records List](https://www.pacswim.org/userfiles/cms/documents/435/far-westerns-records-through-2025-lc.pdf)
   
 - Named to CDST’s Top 25 Times List for the 2023–2024 season, qualified for Junior Nationals at age 14, and member of the Junior National Relay Team 
 
