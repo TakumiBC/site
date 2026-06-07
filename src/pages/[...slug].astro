@@ -51,7 +51,7 @@ const dateText = post.data.dateFormatted || post.data.date.toLocaleDateString('e
 
     <section class="w-full max-w-2xl px-7 mx-auto mb-20 lg:px-0">
       <div id="disqus_thread"></div>
-      <script>
+      <script is:inline>
           var disqus_config = function () {
           this.page.url = window.location.href.split('#')[0];
           this.page.identifier = window.location.pathname;
