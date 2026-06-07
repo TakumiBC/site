@@ -31,7 +31,7 @@
   },
   {
     "name": "July Wu",
-    "url": "https://julyw.com/",
+    "url": "https://blog.julyw.com/",
     "avatar": "https://avatars.githubusercontent.com/u/186053406",
     "description": "Bro, please start blogging..."
   },
@@ -40,5 +40,11 @@
     "url": "https://thedustye.com/",
     "avatar": "https://bu.dusays.com/2023/04/27/64496e511b09c.jpg",
     "description": "一枚迪克"
+  },
+  {
+    "name": "Harbind",
+    "url": "https://harbind.top/",
+    "avatar": "https://harbind.top/wp-content/uploads/2026/03/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_2026-01-16_220500_061-150x150.jpg",
+    "description": "襁褓之中，火光难寻"
   }
 ]
