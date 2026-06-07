@@ -1,0 +1,64 @@
+---
+import { getCollection, render } from 'astro:content';
+import MainLayout from '../layouts/MainLayout.astro';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('post');
+
+  return posts.map((post) => {
+    const rawUrl = post.data.permalink || `/post/${post.slug}/`;
+    const cleanUrl = String(rawUrl).replace(/^\/+|\/+$/g, '');
+
+    return {
+      params: {
+        slug: cleanUrl
+      },
+      props: {
+        post
+      }
+    };
+  });
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+
+const dateText = post.data.dateFormatted || post.data.date.toLocaleDateString('en-US', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric'
+});
+---
+
+<MainLayout title={post.data.title} description={post.data.description || ''}>
+  <main class="relative z-30 max-w-4xl pb-1 mx-auto mt-10 bg-white dark:bg-neutral-950 md:rounded-t-md text-neutral-900">
+    <div class="relative flex flex-col px-5 pt-6 border-t border-b-0 md:border-r md:border-l md:pt-20 lg:px-0 justify-stretch md:rounded-t-2xl border-neutral-200 dark:border-neutral-800">
+      <div class="absolute top-0 left-0 hidden w-px h-full mt-1 -translate-x-px md:block bg-gradient-to-b from-transparent to-white dark:to-neutral-950"></div>
+      <div class="absolute top-0 right-0 hidden w-px h-full mt-1 translate-x-px md:block bg-gradient-to-b from-transparent to-white dark:to-neutral-950"></div>
+
+      <h1 class="w-full max-w-2xl mx-auto text-3xl font-bold leading-tight tracking-tighter text-left md:mb-6 md:text-4xl dark:text-neutral-100 lg:text-5xl md:leading-none">
+        {post.data.title}
+      </h1>
+
+      <div class="w-full max-w-2xl mx-auto mt-4 text-sm text-neutral-500 dark:text-neutral-400">
+        Posted on {dateText}
+      </div>
+    </div>
+
+    <article class="w-full max-w-2xl px-7 mx-auto mb-20 prose prose-sm lg:px-0 lg:prose-lg dark:prose-invert prose-h3:font-bold prose-h4:font-bold prose-code:font-medium prose-a:underline prose-a:decoration-dashed prose-a:decoration-neutral-300 prose-a:underline-offset-4 prose-a:text-inherit prose-a:font-normal">
+      <Content />
+    </article>
+
+    <section class="w-full max-w-2xl px-7 mx-auto mb-20 lg:px-0">
+      <script
+        src="https://utteranc.es/client.js"
+        repo="TakumiBC/site"
+        issue-term="pathname"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+      </script>
+    </section>
+
+  </main>
+</MainLayout>

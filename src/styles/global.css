@@ -1,0 +1,7 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+@source "../../src/**/*.{astro,html,js,ts,md,mdx}";
+@source "../../content/**/*.{html,js,md}";
+@source "../../includes/**/*.{html,js}";
+@source "../../layouts/**/*.{html,js}";
+@source "../../pages/**/*.{html,js}";

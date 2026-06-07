@@ -1,0 +1,57 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+import friends from '../data/friends.json';
+
+const sortedFriends = friends.sort((a, b) => a.name.localeCompare(b.name));
+---
+
+<MainLayout title="Friends">
+  <section class="relative z-20 max-w-2xl mx-auto my-12 px-7 lg:px-0">
+    <div class="relative z-20 w-full mx-auto lg:mx-0">
+      <h1 class="text-3xl font-bold tracking-tight text-neutral-900 dark:text-neutral-100 sm:text-4xl">
+        Friends
+      </h1>
+
+      <p class="mt-4 text-sm leading-6 text-neutral-600 dark:text-neutral-400 sm:text-base sm:leading-7">
+        Say hi to my friends and check out their blogs!
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 gap-5 mt-10 sm:grid-cols-2">
+      {sortedFriends.map((friend) => (
+        <a
+          href={friend.url}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="relative block p-5 border border-dashed group rounded-2xl border-neutral-300 dark:border-neutral-700 bg-white dark:bg-neutral-950"
+        >
+          <div class="flex items-center gap-4">
+            {friend.avatar && (
+              <img
+                src={friend.avatar}
+                alt={friend.name}
+                width="48"
+                height="48"
+                loading="lazy"
+                decoding="async"
+                class="object-cover w-12 h-12 rounded-full"
+              />
+            )}
+
+            <div class="min-w-0">
+              <h2 class="font-bold truncate text-neutral-900 dark:text-neutral-100">
+                {friend.name}
+              </h2>
+
+              {friend.description && (
+                <p class="mt-1 text-sm leading-5 text-neutral-600 dark:text-neutral-400 line-clamp-2">
+                  {friend.description}
+                </p>
+              )}
+            </div>
+          </div>
+        </a>
+      ))}
+    </div>
+  </section>
+</MainLayout>

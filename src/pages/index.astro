@@ -1,0 +1,198 @@
+---
+import { getCollection } from 'astro:content';
+import MainLayout from '../layouts/MainLayout.astro';
+
+const rawPosts = await getCollection('post');
+
+function normalizeUrl(url) {
+  return '/' + String(url || '').replace(/^\/+|\/+$/g, '') + '/';
+}
+
+function getPostUrl(post) {
+  return normalizeUrl(post.data.permalink || `/post/${post.slug}/`);
+}
+
+
+const posts = rawPosts
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
+  .map((post) => ({
+    title: post.data.title || '',
+    description: post.data.description || '',
+    dateFormatted: post.data.dateFormatted || post.data.date.toLocaleDateString('en-US', {
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric'
+    }),
+    link: getPostUrl(post),
+    body: post.body || '',
+    content: post.body || '',
+    tags: Array.isArray(post.data.tags) ? post.data.tags.join('|') : (post.data.tags || '')
+  }));
+
+function escapeHtml(value) {
+  return String(value ?? '')
+    .replaceAll('&', '&amp;')
+    .replaceAll('<', '&lt;')
+    .replaceAll('>', '&gt;')
+    .replaceAll('"', '&quot;')
+    .replaceAll("'", '&#039;');
+}
+
+function renderPostCards(count, template) {
+  return posts.slice(0, count).map((post) => {
+    let html = template;
+
+    for (const [key, value] of Object.entries(post)) {
+      html = html.replaceAll(`{post.${key}}`, escapeHtml(value));
+    }
+
+    return html;
+  }).join('\n');
+}
+---
+
+<MainLayout title="TakumiBC">
+
+
+    <div class="relative z-20 w-full max-w-4xl mx-auto mt-16 px-7 md:mt-24 xl:px-0">
+        <div class="flex flex-col items-center md:flex-row">
+            <div class="relative w-full md:w-1/2 ">
+                <h1 class="mb-5 text-4xl font-bold leading-tight md:text-4xl lg:text-6xl dark:text-white">
+                    Hi, TakumiBC.
+                </h1>
+                <p class="mb-6 text-base text-neutral-600 dark:text-neutral-400">
+                    I am <strong>Thomas Sing-wing Wu</strong>, a high school student from Shanghai, China. I am a computer scientist, Sinologist, researcher, swimming athlete, and a bathroom singer.
+                </p>
+                <div class="flex items-center gap-5 mt-6">
+                    <a class="size-[1.15rem] inline-block" href="/feed" target="_blank">
+                        <img src="https://icons.ly/rss">
+                    </a>
+                    <a class="size-4 inline-block" href="https://www.linkedin.com/in/thomas_wu_3" target="_blank">
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 34 34"
+                            class="w-full h-full"
+                            role="img"
+                            aria-label="LinkedIn"
+                        >
+                            <path
+                                fill="#0a66c2"
+                                d="M34 2.5v29a2.5 2.5 0 0 1-2.5 2.5h-29A2.5 2.5 0 0 1 0 31.5v-29A2.5 2.5 0 0 1 2.5 0h29A2.5 2.5 0 0 1 34 2.5M10 13H5v16h5zm.45-5.5a2.88 2.88 0 0 0-2.86-2.9H7.5a2.9 2.9 0 0 0 0 5.8 2.88 2.88 0 0 0 2.95-2.81zM29 19.28c0-4.81-3.06-6.68-6.1-6.68a5.7 5.7 0 0 0-5.06 2.58h-.14V13H13v16h5v-8.51a3.32 3.32 0 0 1 3-3.58h.19c1.59 0 2.77 1 2.77 3.52V29h5z"
+                            />
+                        </svg>
+                    </a>
+                    <a class="size-5 inline-block" href="https://github.com/TakumiBC" target="_blank">
+                        <img src="https://icons.ly/github">
+                    </a>
+                    <a
+                        class="size-5 inline-flex items-center justify-center overflow-hidden"
+                        href="YOUR_LINK_HERE"
+                        target="_blank"
+                    >
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 61.473 30"
+                            preserveAspectRatio="xMidYMid meet"
+                            class="max-w-full max-h-full"
+                            role="img"
+                            aria-label="Swimcloud"
+                        >
+                            <g fill-rule="evenodd">
+                                <path
+                                    d="M32.897 23.266c-6.693.01-13.041-1.887-18.881-1.993-1.449-.027-4.235.094-5.7.337l-.755.267c10.127.265 23.79 7.354 34.097 2.358 1.817-.881 4.743-3.182 5.42-4.658-1.533.53-2.366 1.44-6.209 2.602-2.473.748-5.261 1.083-7.972 1.087"
+                                    fill="#00adef"
+                                />
+                                <path
+                                    d="M26.223 6.792c1.482-.224 2.658-.074 3.494.492.529-1.03 1.32-2.362 2.3-2.981 1.838-1.162 4.192-1.434 6.268-.812 2.338.701 4.035 2.42 4.773 4.74.075.237.116.51.172.754.07.303.157.61.295.89.346.71.891.966 1.682.831.226-.038.445-.179.63-.309.274-.192.53-.4.816-.576.883-.546 1.748-.62 2.745-.349 1.457.4 2.243 1.359 2.434 2.835.068.525.055 1.045.032 1.571-.008.193-.047.725.016.898.24.651.656.887 1.328.989 1.49.225 2.943.862 3.932 2.03.953 1.124 1.29 2.521 1.166 3.972-.11 1.303-.88 2.921-1.938 3.723-1.397 1.062-2.654 1.257-4.389 1.26l-10.15.016c-7.87.011-11.779.616-19.582-1.104-3.563-.785-6.991-1.762-10.658-2.396-1.987-.342-4.044-.556-6.105-.492C4 22.822.989 23.18 0 23.89c4.664-.19 7.294.485 11.801 1.747 8.267 2.314 14.261 4.273 22.043 4.312 1.205.006 2.41.003 3.614-.002 2.225-.009 4.453-.04 6.676-.04 1.877 0 3.753.099 5.63.094 2.099-.004 5.154-.093 7.047-1.054a8.304 8.304 0 0 0 2.915-2.489c2.403-3.26 2.36-7.734-.335-10.815-.283-.324-.555-.553-.864-.843a7.401 7.401 0 0 0-2.078-1.384c-.24-.108-.483-.2-.724-.305-.183-.08-.54-.005-.658-.173-.17-.242-.083-.795-.134-1.083-.074-.416-.146-.82-.27-1.227-.387-1.282-1.158-2.262-2.21-3.08-1.025-.797-2.102-1.288-3.41-1.33-.726-.023-2.753.062-3.25.562-.06-1.34-2.611-4.148-3.75-4.917C38.3-.667 33.04-.701 29.527 2.26c-1.273 1.075-2.821 2.837-3.304 4.531"
+                                    fill="#004374"
+                                />
+                            </g>
+                        </svg>
+                    </a>
+                    <a class="size-4 inline-block" href="https://www.instagram.com/thomas_sw_wu" target="_blank">
+                        <img src="https://icons.ly/instagram">
+                    </a>
+                </div>
+            </div>
+            <div class="relative justify-end w-full mt-10 md:flex md:pl-10 md:w-1/2 md:mt-0 md:translate-y-4 xl:translate-y-0">
+                <div class="relative z-30 max-w-80">
+                    <img
+                        src="https://avatars.githubusercontent.com/u/62056970"
+                        alt="TakumiBC"
+                        loading="eager"
+                        decoding="async"
+                        fetchpriority="high"
+                        width="960"
+                        height="960"
+                        class="relative z-30 w-full md:max-w-md mx-auto rounded-3xl h-full object-cover aspect-square"
+                    />
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="relative my-20">
+    <div class="relative w-full pl-5 md:pl-0">
+        <div class="absolute w-full h-px bg-gradient-to-r from-transparent to-white md:from-white dark:from-transparent dark:to-neutral-950 md:dark:from-neutral-950 md:via-transparent md:dark:via-transparent md:to-white md:dark:to-neutral-950"></div>
+        <div class="w-full h-px border-t border-dashed border-neutral-300 dark:border-neutral-600"></div>
+    </div>
+    <div class="absolute flex items-center justify-center w-auto h-auto px-3 py-1.5 uppercase tracking-widest space-x-1 text-[0.6rem] md:-translate-x-1/2 -translate-y-1/2 border  rounded-full bg-white dark:bg-neutral-900 text-neutral-400 left-0 md:ml-0 ml-5 md:left-1/2 border-neutral-100 dark:border-neutral-800 shadow-sm">
+        <p class="leading-none">My Posts</p>
+        <div class="flex items-center justify-center w-5 h-5 translate-x-1 border rounded-full border-neutral-100 dark:border-neutral-800">
+        <svg class="w-3 h-3" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m0 0l6.75-6.75M12 19.5l-6.75-6.75" /></svg>
+    </div>
+    </div>
+</div>
+    <section class="max-w-4xl mx-auto px-7 lg:px-0">
+    <h2 class="text-2xl font-bold leading-10 tracking-tight text-neutral-900 dark:text-neutral-100">Posts</h2>
+
+    <div class="w-full max-w-4xl mx-auto my-7 xl:px-0">
+        <div class="flex flex-col items-start justify-start md:flex-row md:space-x-7">
+            <div class="w-full space-y-7">
+                <Fragment set:html={renderPostCards(3, `<div
+        data-post-card
+        class="relative border border-transparent border-dashed cursor-pointer p-7 group rounded-2xl"
+        onClick="window.location='{post.link}'"
+    >
+        <div class="absolute inset-0 z-20 w-full h-full duration-300 ease-out bg-white border border-dashed dark:bg-neutral-950 rounded-2xl border-neutral-300 dark:border-neutral-600 group-hover:-translate-x-1 group-hover:-translate-y-1"></div>
+        <div class="absolute inset-0 z-10 w-full h-full duration-300 ease-out border border-dashed rounded-2xl border-neutral-300 dark:border-neutral-600 group-hover:translate-x-1 group-hover:translate-y-1"></div>
+
+        <div class="relative z-30 duration-300 ease-out group-hover:-translate-x-1 group-hover:-translate-y-1">
+            <h2 class="flex items-center mb-3">
+                <a href="{post.link}" class="text-xl font-bold leading-tight tracking-tight sm:text-2xl dark:text-neutral-100">{post.title}</a>
+                <svg class="group-hover:translate-x-0 flex-shrink-0 translate-y-0.5 -translate-x-1 w-2.5 h-2.5 stroke-current ml-1 transition-all ease-in-out duration-200 transform" viewBox="0 0 13 15" version="1.1" xmlns="http://www.w3.org/2000/svg"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"><g transform="translate(0.666667, 2.333333)" stroke="currentColor" stroke-width="2.4"><g><polyline class="transition-all duration-200 ease-out opacity-0 delay-0 group-hover:opacity-100" points="5.33333333 0 10.8333333 5.5 5.33333333 11"></polyline><line class="transition-all duration-200 ease-out transform -translate-x-1 opacity-0 group-hover:translate-x-0 group-hover:opacity-100 group-hover:ml-0" x1="10.8333333" y1="5.5" x2="0.833333333" y2="5.16666667"></line></g></g></g></svg>
+            </h2>
+
+            <p class="text-sm text-neutral-600 dark:text-neutral-400">
+                <span>{post.description}</span>
+            </p>
+
+            <div class="mt-2.5 text-xs font-medium text-neutral-800 dark:text-neutral-300">
+                Posted on {post.dateFormatted}
+            </div>
+
+            <div class="hidden" data-search-text>
+                {post.title}
+                {post.description}
+                {post.body}
+                {post.content}
+                {post.tags}
+            </div>
+        </div>
+    </div>`)} />
+
+                <div class="flex items-center justify-center w-full py-5">
+                    <a 
+    href="/posts" 
+    class="inline-flex w-auto px-4 py-2 mt-5 text-xs font-semibold duration-300 ease-out border rounded-full bg-neutral-900 dark:bg-white dark:text-neutral-900 text-neutral-100 hover:border-neutral-700 border-neutral-900 dark:hover:border-neutral-300 hover:bg-white dark:hover:bg-black dark:hover:text-white hover:text-neutral-900">
+    View All My Posts
+</a>
+                </div>
+            </div>
+        </div>
+
+
+        
+    </div>
+</section>  
+
+</MainLayout>

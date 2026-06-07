@@ -1,0 +1,143 @@
+---
+import { getCollection } from 'astro:content';
+import MainLayout from '../../layouts/MainLayout.astro';
+
+function normalizeUrl(url) {
+  return '/' + String(url || '').replace(/^\/+|\/+$/g, '') + '/';
+}
+
+function getPostUrl(post) {
+  return normalizeUrl(post.data.permalink || `/post/${post.slug}/`);
+}
+
+const posts = (await getCollection('post')).sort(
+  (a, b) => b.data.date.valueOf() - a.data.date.valueOf()
+);
+---
+
+<MainLayout title="Posts">
+  <section class="relative z-20 max-w-2xl mx-auto my-12 px-7 lg:px-0">
+    <div class="relative z-20 w-full mx-auto lg:mx-0">
+      <h2 class="text-2xl font-bold tracking-tight text-neutral-900 dark:text-neutral-100 sm:text-3xl lg:text-4xl">
+        Posts
+      </h2>
+    </div>
+
+    <div class="z-50 flex flex-col w-full gap-4 my-8">
+      <label class="sr-only" for="searchInput">Search posts</label>
+
+      <div class="relative">
+        <input
+          id="searchInput"
+          type="search"
+          name="q"
+          placeholder="Search by title and content"
+          class="w-full px-4 py-3 text-sm border border-dashed rounded-xl outline-none bg-white/70 dark:bg-neutral-900/70 border-neutral-300 dark:border-neutral-700 focus:border-neutral-500 focus:dark:border-neutral-500"
+          autocomplete="off"
+        />
+
+        <div class="absolute inset-y-0 right-3 flex items-center text-neutral-400 dark:text-neutral-500 pointer-events-none">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
+            <path stroke-linecap="round" stroke-linejoin="round" d="m21 21-3.5-3.5m0 0A7.5 7.5 0 1 0 5 5a7.5 7.5 0 0 0 12.5 12.5Z"></path>
+          </svg>
+        </div>
+      </div>
+
+      <div class="text-xs text-neutral-500 dark:text-neutral-400">
+        <span id="resultsCount">{posts.length}</span> posts
+      </div>
+
+      <div id="searchEmpty" class="hidden text-sm text-neutral-600 dark:text-neutral-400">
+        No matching posts. Try another keyword.
+      </div>
+
+      <div id="searchResults" class="flex flex-col items-stretch w-full gap-5">
+        {posts.map((post) => {
+          const link = getPostUrl(post);
+          const dateText = post.data.dateFormatted || post.data.date.toLocaleDateString('en-US', {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric'
+          });
+
+          const tags = Array.isArray(post.data.tags) ? post.data.tags.join(' ') : String(post.data.tags || '');
+          const searchText = [
+            post.data.title,
+            post.data.description,
+            post.body,
+            tags
+          ].filter(Boolean).join(' ').toLowerCase();
+
+          return (
+            <div
+              data-post-card
+              data-search-text={searchText}
+              class="relative border border-transparent border-dashed cursor-pointer p-7 group rounded-2xl"
+              onclick={`window.location='${link}'`}
+            >
+              <div class="absolute inset-0 z-20 w-full h-full duration-300 ease-out bg-white border border-dashed dark:bg-neutral-950 rounded-2xl border-neutral-300 dark:border-neutral-600 group-hover:-translate-x-1 group-hover:-translate-y-1"></div>
+              <div class="absolute inset-0 z-10 w-full h-full duration-300 ease-out border border-dashed rounded-2xl border-neutral-300 dark:border-neutral-600 group-hover:translate-x-1 group-hover:translate-y-1"></div>
+
+              <div class="relative z-30 duration-300 ease-out group-hover:-translate-x-1 group-hover:-translate-y-1">
+                <h2 class="flex items-center mb-3">
+                  <a href={link} class="text-xl font-bold leading-tight tracking-tight sm:text-2xl dark:text-neutral-100">
+                    {post.data.title}
+                  </a>
+
+                  <svg class="group-hover:translate-x-0 flex-shrink-0 translate-y-0.5 -translate-x-1 w-2.5 h-2.5 stroke-current ml-1 transition-all ease-in-out duration-200 transform" viewBox="0 0 13 15" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+                      <g transform="translate(0.666667, 2.333333)" stroke="currentColor" stroke-width="2.4">
+                        <g>
+                          <polyline class="transition-all duration-200 ease-out opacity-0 delay-0 group-hover:opacity-100" points="5.33333333 0 10.8333333 5.5 5.33333333 11"></polyline>
+                          <line class="transition-all duration-200 ease-out transform -translate-x-1 opacity-0 group-hover:translate-x-0 group-hover:opacity-100 group-hover:ml-0" x1="10.8333333" y1="5.5" x2="0.833333333" y2="5.16666667"></line>
+                        </g>
+                      </g>
+                    </g>
+                  </svg>
+                </h2>
+
+                {post.data.description && (
+                  <p class="text-sm text-neutral-600 dark:text-neutral-400">
+                    <span>{post.data.description}</span>
+                  </p>
+                )}
+
+                <div class="mt-2.5 text-xs font-medium text-neutral-800 dark:text-neutral-300">
+                  Posted on {dateText}
+                </div>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  </section>
+
+  <script is:inline>
+    const input = document.getElementById('searchInput');
+    const cards = Array.from(document.querySelectorAll('[data-post-card]'));
+    const resultsCount = document.getElementById('resultsCount');
+    const searchEmpty = document.getElementById('searchEmpty');
+
+    function updateSearch() {
+      const query = input.value.trim().toLowerCase();
+      let visible = 0;
+
+      for (const card of cards) {
+        const text = card.dataset.searchText || '';
+        const matched = !query || text.includes(query);
+
+        card.classList.toggle('hidden', !matched);
+
+        if (matched) {
+          visible++;
+        }
+      }
+
+      resultsCount.textContent = String(visible);
+      searchEmpty.classList.toggle('hidden', visible !== 0);
+    }
+
+    input.addEventListener('input', updateSearch);
+  </script>
+</MainLayout>
