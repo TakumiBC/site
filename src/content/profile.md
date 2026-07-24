@@ -10,6 +10,8 @@
 
 **Grade 12:** H Chinese Literature + Multivariable Calculus + H British Literature + H English Composition and Research + AP Cybersecurity + AP Physics 2 + AP World History + AP Psychology
 
+**AP Exam Scores:** 5 on all AP exams taken — AP Computer Science A and AP Microeconomics
+
 ## 📖 Academics
 
 * ***Compositional Network Model: A Drop-In Structural Embedding for Chinese Characters via Ideographic Description Sequences***
