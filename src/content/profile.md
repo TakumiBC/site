@@ -4,11 +4,20 @@
 
 **Grade 9:** H Chinese Literature + H Algebra 2 + S World Literature + S Language Arts + H Physics + S+ Chemistry + S+ Biology
 
-**Grade 10:** H Chinese Literature + AP Precalculus + H World Literature + H Language Arts + AP Computer Science A + AP Microeconomics + S Discrete Mathematics
+**Grade 10:** H Chinese Literature + AP Precalculus + H World Literature + H Language Arts + AP Computer Science A + AP Microeconomics + Discrete Mathematics
 
-**Grade 11:** H Chinese Literature + AP Calculus BC + H American Literature + H English Language Arts + AP Physics 1 + AP Macroeconomics + S Linear Algebra
+**Grade 11:** H Chinese Literature + AP Calculus BC + H American Literature + H English Language Arts + AP Physics 1 + AP Macroeconomics + Linear Algebra + AP Statistics
 
-**Grade 12:** H Chinese Literature + AP Statistics + H British Literature + H English Composition and Research + AP Cybersecurity + AP Physics 2 + AP World History + AP Psychology
+**Grade 12:** H Chinese Literature + Multivariable Calculus + H British Literature + H English Composition and Research + AP Cybersecurity + AP Physics 2 + AP World History + AP Psychology
+
+## 📖 Academics
+
+* ***Compositional Network Model: A Drop-In Structural Embedding for Chinese Characters via Ideographic Description Sequences***
+
+  Independent computational-linguistics research conducted by two high-school students: me and [Liqian Yan](https://www.linkedin.com/in/liqian-yan-05563736a/). The paper introduces a lightweight structural embedding based on Unicode [Ideographic Description Sequences](https://en.wikipedia.org/wiki/Ideographic_Description_Characters), integrating Chinese linguistics with artificial intelligence to address tokenization bottlenecks and out-of-vocabulary limitations in Chinese language models.
+
+  Accepted at the [9th International Forum on Linguistics and Chinese Education](https://lt.cityu.edu.hk/ifolce-9/) (**IFOLCE-9**), organized by Stanford, CityUHK, and EdUHK. Became the **first high-school student ever accepted to IFOLCE**, and the paper was **shortlisted for the Sun Dejin Young Scholar Thesis Award**. Currently under review at **EMNLP 2026**.
+
 
 ## 💻 Computer Science
 
@@ -78,13 +87,9 @@ Python, Java, JavaScript, TypeScript, HTML/CSS
   
   Completed a comprehensive introductory course on Traditional Chinese Medicine, covering topics such as Yin and Yang, The Five Elements, Basic Theories, Diagnostic Methods, Pediatric and Gynecological TCM, Materia Medica and Herbal Formulas, and TCM philosophy.
 
-## ✒️ Chinese Language & Literature
-
-- **[The Classical Chinese Textbook](https://github.com/TakumiBC/classical-chinese)** (in progress)
-
-  Author of an open-source Classical Chinese textbook based on two unfinished plans proposed by Dr. Sun Yat-sen (1866–1925) and Professor Ch’ien Mu (1895–1990). The project is the first textbook designed to teach both the reading and writing of Classical Chinese, while existing alternatives focus exclusively on reading. It is also the first textbook to teach Classical Chinese as a living language.
-
 ## 🏅 Awards  
+
+- **Shortlisted, Sun Dejin Young Scholar Thesis Award**, 9th International Forum on Linguistics and Chinese Education (Jun 2026)
 
 - **Student Development Scholarship – First Prize for Potential in Special Talents**, Shanghai Starriver Bilingual School (Jun 2025)
   
@@ -92,46 +97,12 @@ Python, Java, JavaScript, TypeScript, HTML/CSS
 
 - **Academic Progress Award**, Shanghai Starriver Bilingual School (Feb 2025)
 
-- **Swimmer of the Year (Boys)**, Hiba Academy Shanghai (Jun 2024)
+- **Swimmer of the Year (Boys)**, Huili School Shanghai (Jun 2024)
 
-- **Nominee, Sports Person of the Year**, Hiba Academy Shanghai (Jun 2024)
+- **Nominee, Sports Person of the Year**, Huili School Shanghai (Jun 2024)
 
-- **Second Place**, HackWell 2023, Wellington College International Shanghai (Nov 2023)
+- **Runners Up**, HackWell 2023, Wellington College International Shanghai (Nov 2023)
 
 ## 🤝 Memberships
 
 - Member, **[Linguistic Society of Hong Kong](https://lshk.org/)**
-- Member, **[Open Source Initiative](https://opensource.org/)**
-
-## 🌐 Languages  
-
-- **English** – Native
-
-- **Chinese**
-   - **Mandarin** – Native
-   
-   - **Shanghainese** – Native
-   
-   - **Old National Pronunciation** – Native
-   
-   - **Cantonese** – Native
-   
-- **Spanish** – Elementary
-
-## 📚 Interests
-
-- Computer Science
-- Linguistics
-- Chinese Language & Literature
-- Chinese & Western Philosophy
-- Chinese Calligraphy
-- Traditional Chinese Medicine
-- History
-- Economics
-- Finance
-- Politics
-- Law
-- Christian Theology
-- Vocal Music
-- Rubik’s Cube
-- Open Water Swimming
