@@ -67,7 +67,9 @@ Python, Java, JavaScript, TypeScript, HTML/CSS
 
 **Milestones:**
 
-- Competed in the 2024 Hong Kong Olympic Trials
+* Broke the **world record for the fastest swimming start reaction time** with a reaction time of **0.49 seconds** at the 2024 Hong Kong Olympic Trials
+<br />
+→ [Certified by RecordSetter](https://recordsetter.com/world-record/swimming-start-reaction-time/59120)
 
 - Broke a 10-year-old 50 Free meet record at the Far Westerns Pacific Championships 
 <br />
@@ -90,6 +92,8 @@ Python, Java, JavaScript, TypeScript, HTML/CSS
   Completed a comprehensive introductory course on Traditional Chinese Medicine, covering topics such as Yin and Yang, The Five Elements, Basic Theories, Diagnostic Methods, Pediatric and Gynecological TCM, Materia Medica and Herbal Formulas, and TCM philosophy.
 
 ## 🏅 Awards  
+
+- **World Record — Fastest Swimming Start Reaction Time (0.49 seconds)**, achieved at the *Paris 2024 Olympic Games – Hong Kong China Long Course Swimming Invitational Trial I* (May 2024); certified by RecordSetter (Jul 2026)
 
 - **Shortlisted, Sun Dejin Young Scholar Thesis Award**, 9th International Forum on Linguistics and Chinese Education (Jun 2026)
 
